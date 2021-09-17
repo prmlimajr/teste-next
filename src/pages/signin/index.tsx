@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import * as Yup from "yup";
 import { ErrorMessage, Form, Field, Formik } from "formik";
 import { FiUser } from "react-icons/fi";
 import { FaGithub } from "react-icons/fa";
 
-// import { useAuth } from '../../hooks/auth';
+import { useAuth } from "../../context/auth";
 
 import { Button } from "../../components/Button";
 import { Divider } from "../../components/Divider";
 import { Input } from "../../components/Input";
-import { Footer } from "../../components/Footer";
 
 import WhirlpoolLogo from "../../../public/whirlpool-logo.png";
 
@@ -33,9 +32,9 @@ interface IForm {
 }
 
 export default function SignIn() {
-  // const { user, signIn } = useAuth();
+  const { signIn } = useAuth();
 
-  const handleSubmit = (data: IForm) => {};
+  const handleSubmit = ({ name }: IForm) => signIn({ name });
 
   return (
     <Container>
@@ -79,8 +78,6 @@ export default function SignIn() {
           </Form>
         </Formik>
       </FormContainer>
-
-      <Footer />
     </Container>
   );
 }

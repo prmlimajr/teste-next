@@ -1,9 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import {
-  Container,
-  Signature
-} from './styles';
+import { Container, Signature } from "./styles";
 
 export function Footer() {
   return (
