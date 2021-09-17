@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { signIn as GithubSignIn } from "next-auth/client";
 import * as Yup from "yup";
 import { ErrorMessage, Form, Field, Formik } from "formik";
 import { FiUser } from "react-icons/fi";
@@ -56,7 +57,11 @@ export default function SignIn() {
           <Form>
             <FormTitle>Sign In</FormTitle>
 
-            <Button icon={FaGithub} type="submit">
+            <Button
+              icon={FaGithub}
+              type="button"
+              onClick={() => GithubSignIn("github")}
+            >
               Entrar com Github
             </Button>
 

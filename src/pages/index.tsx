@@ -1,14 +1,23 @@
 import { GetServerSideProps } from "next";
 import Head from "next/head";
+import { signOut as GithubSignOut } from "next-auth/client";
 import { parseCookies } from "nookies";
+import { useAuth } from "../context/auth";
 
 export default function Home() {
+  const { signOut } = useAuth();
+
+  const handleSignOut = () => {
+    GithubSignOut();
+    signOut();
+  };
   return (
     <div>
       <Head>
         <title>HVAR - WHIRLPOOL | HOME</title>
       </Head>
       <h1>hello world</h1>
+      <button onClick={() => handleSignOut()}>sair</button>
     </div>
   );
 }

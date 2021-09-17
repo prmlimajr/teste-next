@@ -1,6 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import { setCookie, parseCookies, destroyCookie } from "nookies";
 import Router from "next/router";
+import { useSession } from "next-auth/client";
 
 interface AuthContextData {
   user: User | null;
@@ -17,6 +18,7 @@ const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
 export const AuthProvider: React.FC = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
+  const [session] = useSession();
 
   const isAuthenticated = !!user;
 
@@ -25,8 +27,20 @@ export const AuthProvider: React.FC = ({ children }) => {
 
     if (user) {
       setUser(JSON.parse(user));
+      Router.push("/");
     }
-  }, []);
+
+    if (session) {
+      const user = {
+        name: session.user.name,
+      };
+      setUser(user);
+      setCookie(null, "HVAR-WHIRLPOOL_USER", JSON.stringify(user), {
+        maxAge: 60 * 60 * 24, // 1 day
+      });
+      Router.push("/");
+    }
+  }, [session]);
 
   const signIn = ({ name }: User) => {
     const user = {
