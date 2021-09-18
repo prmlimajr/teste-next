@@ -42,6 +42,7 @@ export function Header() {
       {isDropdownVisible && (
         <Dropdown
           toggleDropdown={() => setIsDropdownVisible(!isDropdownVisible)}
+          isOpen={isDropdownVisible}
         />
       )}
     </Container>

@@ -17,6 +17,7 @@ export const Item = styled.li`
   align-items: center;
   cursor: pointer;
   padding: 15px;
+  border-bottom: 1px solid var(--text-light);
 
   &:hover {
     background: var(--background);
@@ -24,6 +25,7 @@ export const Item = styled.li`
 
   &:last-child {
     color: var(--alert);
+    border-bottom: none;
   }
 `;
 
