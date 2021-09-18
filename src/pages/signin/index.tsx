@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { signIn as GithubSignIn } from "next-auth/client";
 import * as Yup from "yup";
 import { ErrorMessage, Form, Field, Formik } from "formik";
@@ -12,15 +11,7 @@ import { Button } from "../../components/Button";
 import { Divider } from "../../components/Divider";
 import { Input } from "../../components/Input";
 
-import WhirlpoolLogo from "../../../public/whirlpool-logo.png";
-
-import {
-  Container,
-  LogoContainer,
-  FormContainer,
-  FormTitle,
-  ValidationError,
-} from "./styles";
+import { Container, FormContainer, FormTitle, ValidationError } from "./styles";
 
 const schema = Yup.object().shape({
   name: Yup.string()
@@ -39,15 +30,6 @@ export default function SignIn() {
 
   return (
     <Container>
-      <LogoContainer>
-        <Image
-          src={WhirlpoolLogo}
-          alt="Whirlpool logo"
-          width="200px"
-          height="70px"
-        />
-      </LogoContainer>
-
       <FormContainer>
         <Formik
           initialValues={{ name: "" }}

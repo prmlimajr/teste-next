@@ -5,7 +5,7 @@ import { parseCookies } from "nookies";
 import { useAuth } from "../context/auth";
 
 export default function Home() {
-  const { signOut } = useAuth();
+  const { user, signOut } = useAuth();
 
   const handleSignOut = () => {
     GithubSignOut();
@@ -16,7 +16,7 @@ export default function Home() {
       <Head>
         <title>HVAR - WHIRLPOOL | HOME</title>
       </Head>
-      <h1>hello world</h1>
+      <h1>hello, {user && user.name}</h1>
       <button onClick={() => handleSignOut()}>sair</button>
     </div>
   );

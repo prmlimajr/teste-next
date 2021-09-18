@@ -12,6 +12,7 @@ interface AuthContextData {
 
 interface User {
   name: string;
+  image?: string;
 }
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
@@ -33,6 +34,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     if (session) {
       const user = {
         name: session.user.name,
+        image: session.user.image,
       };
       setUser(user);
       setCookie(null, "HVAR-WHIRLPOOL_USER", JSON.stringify(user), {
