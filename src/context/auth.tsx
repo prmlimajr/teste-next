@@ -1,7 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import { setCookie, parseCookies, destroyCookie } from "nookies";
 import Router from "next/router";
-import { useSession } from "next-auth/client";
+import { useSession, signOut as GithubSignOut } from "next-auth/client";
 
 interface AuthContextData {
   user: User | null;
@@ -58,8 +58,14 @@ export const AuthProvider: React.FC = ({ children }) => {
   };
 
   const signOut = () => {
+    if (session) {
+      GithubSignOut();
+    }
+
     destroyCookie(null, "HVAR-WHIRLPOOL_USER");
     setUser(null);
+
+    Router.push("/signin");
   };
 
   return (

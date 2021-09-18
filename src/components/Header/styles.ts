@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import Image from "next/image";
 
-export const Container = styled.div`
+export const Container = styled.nav`
   padding: 20px 150px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 `;
 
 export const UserArea = styled.div`

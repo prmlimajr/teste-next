@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Avatar from "react-avatar";
-
 import { useAuth } from "../../context/auth";
 
-import WhirlpoolLogo from "../../../public/whirlpool-logo.png";
+import { Dropdown } from "../Dropdown";
 
+import WhirlpoolLogo from "../../../public/whirlpool-logo.png";
 import { Container, UserArea, UserImage, UserName } from "./styles";
 
 export function Header() {
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+
   const { user } = useAuth();
 
   return (
@@ -21,7 +23,7 @@ export function Header() {
       />
 
       {user && (
-        <UserArea>
+        <UserArea onClick={() => setIsDropdownVisible(!isDropdownVisible)}>
           {user.image ? (
             <UserImage
               src={user.image}
@@ -35,6 +37,12 @@ export function Header() {
 
           <UserName>{user.name}</UserName>
         </UserArea>
+      )}
+
+      {isDropdownVisible && (
+        <Dropdown
+          toggleDropdown={() => setIsDropdownVisible(!isDropdownVisible)}
+        />
       )}
     </Container>
   );
