@@ -5,84 +5,120 @@
       "name": "Geladeira Brastemp Brm44hk Frost Free Duplex 375l Com Compartimento Extrafrio Fresh Zone Inox - 110v",
       "brand": "Brastemp",
       "sku": "gel/110/brm",
-      "price": 2899.99
+      "price": 2899.99,
+      "created_at": "19/09/2021",
+      "updated_at": "19/09/2021",
+      "updated_by": "Paulo Lima"
     },
     {
       "id": "6199cedc-808d-4313-bfd0-c6b782dbf609",
       "name": "Geladeira Brastemp Frost Free 443 Litros - Bre57 Inox 110v",
       "brand": "Brastemp",
       "sku": "gel/110/bre",
-      "price": 4248
+      "price": 4248,
+      "created_at": "19/09/2021",
+      "updated_at": "19/09/2021",
+      "updated_by": "Paulo Lima"
     },
     {
       "id": "455aa063-f43f-4f3a-a30e-f1bd9d9abdbd",
       "name": "Geladeira Brastemp Frost Free 400 Litros - Brm54 Branco - 220v",
       "brand": "Brastemp",
       "sku": "gel/220/brm-b",
-      "price": 2999.99
+      "price": 2999.99,
+      "created_at": "19/09/2021",
+      "updated_at": "19/09/2021",
+      "updated_by": "Paulo Lima"
     },
     {
       "id": "9ff63e91-fd99-4425-85a4-57036054f0e4",
       "name": "Fogão De Piso Brastemp 4 Bocas Bfo4n Branco - Bivolt",
       "brand": "Brastemp",
       "sku": "fog/bi/bfo-b",
-      "price": 899.99
+      "price": 899.99,
+      "created_at": "19/09/2021",
+      "updated_at": "19/09/2021",
+      "updated_by": "Paulo Lima"
     },
     {
       "id": "0df210b5-07f4-450f-bca3-a02a1ecc26bb",
       "name": "Cooktop À Gás 4 Bocas Brastemp Ative! Bdd61 Preto Vidro - Bivolt",
       "brand": "Brastemp",
       "sku": "ct/bi/bdd",
-      "price": 638.99
+      "price": 638.99,
+      "created_at": "19/09/2021",
+      "updated_at": "19/09/2021",
+      "updated_by": "Paulo Lima"
     },
     {
       "id": "256a30c6-3689-4e6b-b160-a0d43f70e158",
       "name": "Micro-Ondas Brastemp Espelhado Grill 32 Litros - Bmg45 110v",
       "brand": "Brastemp",
       "sku": "mo/110/bmg",
-      "price": 999.99
+      "price": 999.99,
+      "created_at": "19/09/2021",
+      "updated_at": "19/09/2021",
+      "updated_by": "Paulo Lima"
     },
     {
       "id": "11164f66-7c97-404b-95d7-95c12c36f4f3",
       "name": "Máquina De Lavar Consul 9kg Cwb09 Dosagem Extra Econômica E Ciclo Edredom - 110v",
       "brand": "Consul",
       "sku": "maq/110/cwb",
-      "price": 1329.99
+      "price": 1329.99,
+      "created_at": "19/09/2021",
+      "updated_at": "19/09/2021",
+      "updated_by": "Paulo Lima"
     },
     {
       "id": "46137b2d-8727-4ecc-a43f-bfb653b179cb",
       "name": "Micro-Ondas Consul Espelhado - 20l - Cinza 127v - Cm020",
       "brand": "Consul",
       "sku": "mo/127/cm0",
-      "price": 539.99
+      "price": 539.99,
+      "created_at": "19/09/2021",
+      "updated_at": "19/09/2021",
+      "updated_by": "Paulo Lima"
     },
     {
       "id": "b08cb8ce-2876-46b8-a4e0-0b87c3fe3b37",
       "name": "Cooktop À Gás Consul 5 Bocas Cd075 Acendimento Inteligente Preto",
       "brand": "Consul",
       "sku": "ct/g/cd0",
-      "price": 589.99
+      "price": 589.99,
+      "created_at": "19/09/2021",
+      "updated_at": "19/09/2021",
+      "updated_by": "Paulo Lima"
     },
     {
       "id": "74f8d212-1c7c-46b9-aefa-c06447687dc3",
       "name": "Fogão Piso Consul 4 Bocas Cfo4v Mesa De Vidro Inox Bivolt",
       "brand": "Consul",
       "sku": "fog/bi/cfo",
-      "price": 1438
+      "price": 1438,
+      "created_at": "19/09/2021",
+      "updated_at": "19/09/2021",
+      "updated_by": "Paulo Lima"
     },
     {
       "id": "90d852ee-0c82-4cad-b159-3ee5cc9b2108",
       "name": "Freezer Consul Vertical 121l Cvu18 220v",
       "brand": "Consul",
       "sku": "frz/220/cvu",
-      "price": 1588.99
+      "price": 1588.99,
+      "created_at": "19/09/2021",
+      "updated_at": "19/09/2021",
+      "updated_by": "Paulo Lima"
     },
     {
       "id": "287333e6-3da3-4bc3-9175-1bc11e07779f",
       "name": "Freezer Consul Vertical 121l Cvu18 220v",
       "brand": "Consul",
       "sku": "frz/220/cvu",
-      "price": 1588.99
+      "price": 1588.99,
+      "created_at": "19/09/2021",
+      "updated_at": "19/09/2021",
+      "updated_by": "Paulo Lima"
     },
     {
       "id": "6700e434-f54a-4ad0-9e56-34673096ed5c",
@@ -107,8 +143,8 @@
       "name": "teste123",
       "sku": "asdate",
       "price": 1000.99,
-      "created_at": "2021-09-19T20:46:42.519Z",
-      "updated_at": "2021-09-19T20:46:42.519Z",
+      "created_at": "19/09/2021",
+      "updated_at": "19/09/2021",
       "updated_by": "Paulo Lima"
     }
   ]

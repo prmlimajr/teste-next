@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { format } from "date-fns";
 import * as Yup from "yup";
 import { ErrorMessage, Form, Field, Formik } from "formik";
 import { IoMdClose } from "react-icons/io";
@@ -117,8 +118,8 @@ export function ProductModal({ onClose, type, product }: ProductModalProps) {
             name,
             sku,
             price,
-            created_at: new Date(),
-            updated_at: new Date(),
+            created_at: format(new Date(), "dd/MM/yyyy"),
+            updated_at: format(new Date(), "dd/MM/yyyy"),
             updated_by: user.name,
           },
           config
@@ -132,7 +133,7 @@ export function ProductModal({ onClose, type, product }: ProductModalProps) {
             sku,
             price,
             created_at: product.created_at,
-            updated_at: new Date(),
+            updated_at: format(new Date(), "dd/MM/yyyy"),
             updated_by: user.name,
           },
           config
