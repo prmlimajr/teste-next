@@ -1,6 +1,7 @@
 import { GetServerSideProps } from "next";
 import Head from "next/head";
 import { parseCookies } from "nookies";
+import { ProductCard } from "../components/ProductCard";
 import { useAuth } from "../context/auth";
 
 export default function Home() {
@@ -11,7 +12,15 @@ export default function Home() {
       <Head>
         <title>HVAR - WHIRLPOOL | HOME</title>
       </Head>
-      <h1>hello, {user && user.name}</h1>
+
+      <ProductCard
+        id="asdad"
+        image="https://whirlpool.s3.amazonaws.com/wp-content/uploads/2014/07/Jennair2.png"
+        name="Refrigerador"
+        price={1999.9}
+        sku="asdas"
+      />
+
       <button onClick={() => signOut()}>sair</button>
     </div>
   );

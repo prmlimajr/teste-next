@@ -14,6 +14,10 @@ export const UserArea = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 50px;
+  border: 1px solid var(--button-primary);
+  background: var(--color-card);
 `;
 
 export const UserImage = styled(Image)`

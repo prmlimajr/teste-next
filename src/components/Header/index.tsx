@@ -12,7 +12,7 @@ export function Header() {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
   const { user } = useAuth();
-
+  console.log({ isDropdownVisible });
   return (
     <Container>
       <Image

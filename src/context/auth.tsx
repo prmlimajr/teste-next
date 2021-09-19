@@ -58,14 +58,14 @@ export const AuthProvider: React.FC = ({ children }) => {
   };
 
   const signOut = () => {
+    Router.push("/signin");
+
     if (session) {
       GithubSignOut();
     }
 
     destroyCookie(null, "HVAR-WHIRLPOOL_USER");
     setUser(null);
-
-    Router.push("/signin");
   };
 
   return (
