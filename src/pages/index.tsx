@@ -6,18 +6,20 @@ import { parseCookies } from "nookies";
 import { Loader } from "../components/Loader";
 import { Searchbar } from "../components/Searchbar";
 import { ProductCard } from "../components/ProductCard";
+import { Button } from "../components/Button";
+import { ProductModal } from "../components/ProductModal";
 
 import { api } from "../service/api";
 
 import {
   Container,
-  FilterArea,
+  MenuContainer,
+  MenuArea,
   FilterHeader,
   Options,
   Option,
   ProductsArea,
 } from "./styles";
-import { Button } from "../components/Button";
 
 interface Product {
   id: string;
@@ -31,6 +33,7 @@ interface Product {
 export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
   const [term, setTerm] = useState("");
+  const [isProductModalOpen, setIsProductModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -101,6 +104,23 @@ export default function Home() {
     }
   };
 
+  const handleCloseModal = async (success: boolean) => {
+    if (success) {
+      try {
+        setIsLoading(true);
+
+        const { data } = await api.get("/products");
+        setProducts(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    setIsProductModalOpen(false);
+  };
+
   return (
     <>
       <Head>
@@ -109,31 +129,45 @@ export default function Home() {
 
       <Container>
         {isLoading && <Loader />}
-
-        <FilterArea>
-          <FilterHeader>Filtros:</FilterHeader>
-
-          <Searchbar
-            onChange={(data) => setTerm(data)}
-            onSubmit={() => handleSearch()}
+        {isProductModalOpen && (
+          <ProductModal
+            type="CREATE"
+            onClose={(e: boolean) => handleCloseModal(e)}
           />
+        )}
 
-          <FilterHeader>Ordenar por:</FilterHeader>
+        <MenuContainer>
+          <MenuArea>
+            <Button primary onClick={() => setIsProductModalOpen(true)}>
+              Adicionar Produto
+            </Button>
+          </MenuArea>
 
-          <Options>
-            <Option onClick={() => handleOrder("price")}>Preço</Option>
-            <Option onClick={() => handleOrder("name")}>Nome</Option>
-          </Options>
+          <MenuArea>
+            <FilterHeader>Filtros:</FilterHeader>
 
-          <FilterHeader>Filtros:</FilterHeader>
-          <Options>
-            <Option onClick={() => handleFilter("isFavorite")}>
-              Favoritos
-            </Option>
-          </Options>
+            <Searchbar
+              onChange={(data) => setTerm(data)}
+              onSubmit={() => handleSearch()}
+            />
 
-          <Button onClick={() => handleClearFilter()}>Limpar filtros</Button>
-        </FilterArea>
+            <FilterHeader>Ordenar por:</FilterHeader>
+
+            <Options>
+              <Option onClick={() => handleOrder("price")}>Preço</Option>
+              <Option onClick={() => handleOrder("name")}>Nome</Option>
+            </Options>
+
+            <FilterHeader>Filtros:</FilterHeader>
+            <Options>
+              <Option onClick={() => handleFilter("isFavorite")}>
+                Favoritos
+              </Option>
+            </Options>
+
+            <Button onClick={() => handleClearFilter()}>Limpar filtros</Button>
+          </MenuArea>
+        </MenuContainer>
 
         <ProductsArea>
           {products.map((product) => {

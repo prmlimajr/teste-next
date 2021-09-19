@@ -1,12 +1,11 @@
 {
   "products": [
     {
-      "id": "2d0e4ab6-929b-4318-a8c4-5edc3a27eb49",
+      "id": "3b99976f-62a8-456a-aff6-1e7cd2859165",
       "name": "Geladeira Brastemp Brm44hk Frost Free Duplex 375l Com Compartimento Extrafrio Fresh Zone Inox - 110v",
       "brand": "Brastemp",
       "sku": "gel/110/brm",
-      "price": 2899.99,
-      "favorite": true
+      "price": 2899.99
     },
     {
       "id": "6199cedc-808d-4313-bfd0-c6b782dbf609",
@@ -84,6 +83,33 @@
       "brand": "Consul",
       "sku": "frz/220/cvu",
       "price": 1588.99
+    },
+    {
+      "id": "6700e434-f54a-4ad0-9e56-34673096ed5c",
+      "name": "Teste",
+      "sku": "asda",
+      "price": 50,
+      "created_at": "2021-09-19T20:33:54.210Z",
+      "updated_at": "2021-09-19T20:33:54.210Z",
+      "updated_by": "Paulo Lima"
+    },
+    {
+      "id": "4acfc445-a6ff-4185-9aa5-665c851d0a0c",
+      "name": "Teste2",
+      "sku": "asdad",
+      "price": 31231,
+      "created_at": "2021-09-19T20:37:31.678Z",
+      "updated_at": "2021-09-19T20:37:31.678Z",
+      "updated_by": "Paulo Lima"
+    },
+    {
+      "id": "3e0af857-77eb-4e59-a471-9be5ee24c435",
+      "name": "teste123",
+      "sku": "asdate",
+      "price": 1000.99,
+      "created_at": "2021-09-19T20:46:42.519Z",
+      "updated_at": "2021-09-19T20:46:42.519Z",
+      "updated_by": "Paulo Lima"
     }
   ]
 }

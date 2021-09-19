@@ -6,13 +6,16 @@ export const Container = styled.main`
   display: flex;
 `;
 
-export const FilterArea = styled.aside`
+export const MenuContainer = styled.aside``;
+
+export const MenuArea = styled.div`
   background: var(--color-card);
   width: 300px;
-  height: 310px;
+  max-height: 310px;
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-right: 30px;
+  margin-bottom: 20px;
   padding: 10px;
 `;
 
