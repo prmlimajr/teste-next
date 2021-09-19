@@ -7,6 +7,7 @@ export const Container = styled.nav`
   justify-content: space-between;
   align-items: center;
   position: relative;
+  z-index: 1;
 `;
 
 export const UserArea = styled.div`

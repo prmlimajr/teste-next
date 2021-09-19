@@ -19,14 +19,24 @@ interface ProductProps {
   name: string;
   sku: string;
   price: number;
+  favorite: boolean;
 }
 
-export function ProductCard({ id, image, name, sku, price }: ProductProps) {
+export function ProductCard({
+  id,
+  image,
+  name,
+  sku,
+  price,
+  favorite,
+}: ProductProps) {
   const [isFavorite, setIsFavorite] = React.useState(false);
 
   return (
     <Container>
-      <ProductImage src={image} alt={name} width="200px" height="200px" />
+      {image && (
+        <ProductImage src={image} alt={name} width="200px" height="200px" />
+      )}
 
       <Link href="/products/[id]" as={`/products/${id}`} passHref>
         <ProductTitle>{name}</ProductTitle>

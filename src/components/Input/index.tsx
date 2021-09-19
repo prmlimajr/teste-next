@@ -1,22 +1,17 @@
-import React, { InputHTMLAttributes } from 'react';
-import { IconBaseProps } from 'react-icons/lib';
+import React, { InputHTMLAttributes } from "react";
+import { IconBaseProps } from "react-icons/lib";
 
-import {
-  Container,
-  Span,
-  InputContainer,
-  TextInput
-} from './styles';
+import { Container, Span, InputContainer, TextInput } from "./styles";
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  label: string;
+  label?: string;
   icon?: React.ComponentType<IconBaseProps>;
 }
 
 export function Input({ label, icon: Icon, ...rest }: IInputProps) {
   return (
     <Container>
-      <Span>{label}</Span>
+      {label && <Span>{label}</Span>}
       <InputContainer>
         {Icon && <Icon size={20} />}
         <TextInput {...rest} />
@@ -26,5 +21,5 @@ export function Input({ label, icon: Icon, ...rest }: IInputProps) {
 }
 
 Input.defaultProps = {
-  icon: null
+  icon: null,
 };

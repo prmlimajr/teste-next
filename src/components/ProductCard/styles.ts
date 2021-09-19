@@ -4,31 +4,24 @@ import Image from "next/image";
 export const Container = styled.div`
   background: var(--color-card);
   width: 220px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+  margin-right: 20px;
 `;
 
 export const ProductImage = styled(Image)``;
 
 export const ProductTitle = styled.span`
-  font-weight: 900;
+  font-weight: 700;
+  font-size: 0.9rem;
   margin-top: 5px;
   cursor: pointer;
-`;
-
-export const SKUContainer = styled.div`
-  border: 1px solid var(--button-secondary);
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
-  padding: 1px;
-  border-radius: 50px;
-  align-self: flex-start;
-  margin-bottom: 5px;
 `;
 
 export const ProductSKU = styled.span`
@@ -45,8 +38,8 @@ export const FooterContainer = styled.div`
 `;
 
 export const ProductPrice = styled.span`
-  font-size: 1.1rem;
-  font-weight: 900;
+  font-size: 1.2rem;
+  font-weight: 700;
 `;
 
 export const Clickable = styled.div`
