@@ -3,13 +3,21 @@ import { GetServerSideProps } from "next";
 import Head from "next/head";
 import { parseCookies } from "nookies";
 
-import { api } from "../service/api";
-
-import { ProductCard } from "../components/ProductCard";
-
-import { Container, FilterArea, ProductsArea } from "./styles";
 import { Loader } from "../components/Loader";
 import { Searchbar } from "../components/Searchbar";
+import { ProductCard } from "../components/ProductCard";
+
+import { api } from "../service/api";
+
+import {
+  Container,
+  FilterArea,
+  FilterHeader,
+  Options,
+  Option,
+  ProductsArea,
+} from "./styles";
+import { Button } from "../components/Button";
 
 interface Product {
   id: string;
@@ -28,7 +36,7 @@ export default function Home() {
   useEffect(() => {
     async function loadProducts() {
       try {
-        const { data } = await api.get("/products");
+        const { data } = await api.get("/products?_sort=name");
 
         setProducts(data);
       } catch (error) {
@@ -54,6 +62,45 @@ export default function Home() {
     }
   };
 
+  const handleFilter = async (filter: string) => {
+    try {
+      setIsLoading(true);
+
+      const { data } = await api.get(`/products?favorite=true`);
+      setProducts(data);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleOrder = async (sort: string) => {
+    try {
+      setIsLoading(true);
+
+      const { data } = await api.get(`/products?_sort=${sort}`);
+      setProducts(data);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleClearFilter = async () => {
+    try {
+      setIsLoading(true);
+
+      const { data } = await api.get("/products");
+      setProducts(data);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <>
       <Head>
@@ -64,10 +111,28 @@ export default function Home() {
         {isLoading && <Loader />}
 
         <FilterArea>
+          <FilterHeader>Filtros:</FilterHeader>
+
           <Searchbar
             onChange={(data) => setTerm(data)}
             onSubmit={() => handleSearch()}
           />
+
+          <FilterHeader>Ordenar por:</FilterHeader>
+
+          <Options>
+            <Option onClick={() => handleOrder("price")}>Preço</Option>
+            <Option onClick={() => handleOrder("name")}>Nome</Option>
+          </Options>
+
+          <FilterHeader>Filtros:</FilterHeader>
+          <Options>
+            <Option onClick={() => handleFilter("isFavorite")}>
+              Favoritos
+            </Option>
+          </Options>
+
+          <Button onClick={() => handleClearFilter()}>Limpar filtros</Button>
         </FilterArea>
 
         <ProductsArea>

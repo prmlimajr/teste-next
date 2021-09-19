@@ -26,7 +26,7 @@ export function Searchbar({ onSubmit, onChange }: SearchProps) {
         <Field
           type="text"
           name="term"
-          placeholder="Search"
+          placeholder="Pesquisar"
           icon={ImSearch}
           as={Input}
           onChange={handleChange}

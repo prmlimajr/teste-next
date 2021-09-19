@@ -5,7 +5,8 @@
       "name": "Geladeira Brastemp Brm44hk Frost Free Duplex 375l Com Compartimento Extrafrio Fresh Zone Inox - 110v",
       "brand": "Brastemp",
       "sku": "gel/110/brm",
-      "price": 2899.99
+      "price": 2899.99,
+      "favorite": true
     },
     {
       "id": "6199cedc-808d-4313-bfd0-c6b782dbf609",
