@@ -8,6 +8,15 @@ export const Container = styled.nav`
   align-items: center;
   position: relative;
   z-index: 1;
+
+  @media (max-width: 1080px) {
+    padding: 20px 50px;
+  }
+
+  @media (max-width: 720px) {
+    padding: 20px 20px;
+    max-width: 370px;
+  }
 `;
 
 export const UserArea = styled.div`
@@ -19,6 +28,10 @@ export const UserArea = styled.div`
   border-radius: 50px;
   border: 1px solid var(--button-primary);
   background: var(--color-card);
+
+  @media (max-width: 720px) {
+    padding: 2px;
+  }
 `;
 
 export const UserImage = styled(Image)`
@@ -28,4 +41,8 @@ export const UserImage = styled(Image)`
 export const UserName = styled.span`
   font-weight: 700;
   margin-left: 10px;
+
+  @media (max-width: 720px) {
+    display: none;
+  }
 `;

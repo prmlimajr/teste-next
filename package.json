@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "server": "json-server server.json -p 3030 --delay 700"
+    "server": "json-server server.json -p 3030 --delay 300"
   },
   "dependencies": {
     "axios": "^0.21.4",

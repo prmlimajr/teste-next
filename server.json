@@ -120,31 +120,10 @@
     {
       "id": "287333e6-3da3-4bc3-9175-1bc11e07779f",
       "name": "Freezer Consul Vertical 121l Cvu18 220v",
-      "brand": "Consul",
       "sku": "frz/220/cvu",
-      "price": 1588.99,
-      "isFavorite": false,
-      "created_at": "19/09/2021",
-      "updated_at": "19/09/2021",
-      "updated_by": "Paulo Lima"
-    },
-    {
-      "id": "6700e434-f54a-4ad0-9e56-34673096ed5c",
-      "name": "Teste",
-      "sku": "asda",
-      "price": 50,
+      "price": 1558.99,
       "isFavorite": true,
-      "created_at": "2021-09-19T20:33:54.210Z",
-      "updated_at": "20/09/2021",
-      "updated_by": "Paulo Lima"
-    },
-    {
-      "id": "4b83d79f-9acf-4dce-bff5-bb62751250f5",
-      "name": "testando",
-      "sku": "teste12312",
-      "price": 1111,
-      "isFavorite": false,
-      "created_at": "20/09/2021",
+      "created_at": "19/09/2021",
       "updated_at": "20/09/2021",
       "updated_by": "Paulo Lima"
     }

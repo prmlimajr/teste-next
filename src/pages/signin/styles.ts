@@ -6,6 +6,17 @@ export const Container = styled.div`
   width: 100%;
   min-height: calc(100vh - 100px);
   padding-bottom: 120px;
+
+  @media (max-width: 1080px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (max-width: 720px) {
+    padding: 0 20px;
+  }
 `;
 
 export const LogoContainer = styled.div`

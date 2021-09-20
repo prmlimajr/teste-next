@@ -4,6 +4,22 @@ export const Container = styled.main`
   padding: 20px 100px;
   margin-bottom: 100px;
   display: flex;
+
+  @media (max-width: 1080px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  @media (max-width: 720px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
 `;
 
 export const MenuContainer = styled.aside``;
@@ -17,6 +33,14 @@ export const MenuArea = styled.div`
   margin-right: 30px;
   margin-bottom: 20px;
   padding: 10px;
+
+  @media (max-width: 1080px) {
+    padding: 20px;
+  }
+
+  @media (max-width: 720px) {
+    margin-right: 0;
+  }
 `;
 
 export const FilterHeader = styled.span`

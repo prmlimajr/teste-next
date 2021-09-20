@@ -11,11 +11,17 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1080px) {
+  }
+
+  @media (max-width: 720px) {
+    padding: 10px;
+  }
 `;
 
 export const Container = styled.div`
   width: 500px;
-  /* min-height: 500px; */
   background-color: var(--color-card);
   border-radius: 10px;
   display: flex;

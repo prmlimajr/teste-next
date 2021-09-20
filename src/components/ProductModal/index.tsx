@@ -195,7 +195,7 @@ export function ProductModal({ onClose, type, product }: ProductModalProps) {
                 <ErrorMessage component={ValidationError} name="price" />
 
                 <Button primary type="submit">
-                  Adicionar Produto
+                  {type === "CREATE" ? "Adicionar Produto" : "Editar Produto"}
                 </Button>
               </Form>
             );
