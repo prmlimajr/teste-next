@@ -1,9 +1,10 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { format } from "date-fns";
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
 import { api } from "../service/api";
 import { useAuth } from "./auth";
+import { route } from "next/dist/server/router";
 
 interface ProductContextData {
   products: Product[];
@@ -36,7 +37,7 @@ const ProductContext = createContext<ProductContextData>(
 export const ProductProvider: React.FC = ({ children }) => {
   const [products, setProducts] = useState<Product[]>([]);
 
-  const { user } = useAuth();
+  const router = useRouter();
 
   const list = async () => {
     try {
@@ -126,7 +127,7 @@ export const ProductProvider: React.FC = ({ children }) => {
     try {
       await api.delete(`/products/${id}`);
 
-      await list();
+      router.push("/");
     } catch (error) {
       console.error(error);
     }

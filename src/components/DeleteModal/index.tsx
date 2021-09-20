@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { useProduct } from "../../context/products";
@@ -22,6 +23,8 @@ export function DeleteModal({ id, onClose }: ModalProps) {
   const [isLoading, setIsLoading] = useState(false);
 
   const { destroy } = useProduct();
+  const router = useRouter();
+
   const node = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -54,6 +57,8 @@ export function DeleteModal({ id, onClose }: ModalProps) {
     try {
       setIsLoading(true);
       await destroy(id);
+
+      router.push("/");
     } catch (error) {
       console.log(error);
     } finally {

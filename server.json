@@ -139,40 +139,10 @@
       "updated_by": "Paulo Lima"
     },
     {
-      "id": "4acfc445-a6ff-4185-9aa5-665c851d0a0c",
-      "name": "Teste2",
-      "sku": "asdad",
-      "price": 31231,
-      "isFavorite": false,
-      "created_at": "2021-09-19T20:37:31.678Z",
-      "updated_at": "2021-09-19T20:37:31.678Z",
-      "updated_by": "Paulo Lima"
-    },
-    {
-      "id": "3e0af857-77eb-4e59-a471-9be5ee24c435",
-      "name": "teste123",
-      "sku": "asdate",
-      "price": 1000.99,
-      "isFavorite": false,
-      "created_at": "19/09/2021",
-      "updated_at": "20/09/2021",
-      "updated_by": "Paulo Lima"
-    },
-    {
       "id": "4b83d79f-9acf-4dce-bff5-bb62751250f5",
       "name": "testando",
       "sku": "teste12312",
       "price": 1111,
-      "isFavorite": false,
-      "created_at": "20/09/2021",
-      "updated_at": "20/09/2021",
-      "updated_by": "Paulo Lima"
-    },
-    {
-      "id": "c5e4f77b-0815-48b3-a53a-7ee0a9a1a3ec",
-      "name": "teste 4",
-      "sku": "tesra",
-      "price": 231,
       "isFavorite": false,
       "created_at": "20/09/2021",
       "updated_at": "20/09/2021",
