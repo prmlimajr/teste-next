@@ -61,7 +61,7 @@ export const ProductProvider: React.FC = ({ children }) => {
 
   const filter = async () => {
     try {
-      const { data } = await api.get(`/products?favorite=true`);
+      const { data } = await api.get(`/products?isFavorite=true`);
 
       setProducts(data);
     } catch (error) {

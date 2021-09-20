@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { FiHeart, FiLogOut } from "react-icons/fi";
 import { useAuth } from "../../context/auth";
+import { useProduct } from "../../context/products";
 
 import { Container, List, Item, Span } from "./styles";
 
@@ -11,6 +12,7 @@ interface DropdownProps {
 
 export function Dropdown({ toggleDropdown, isOpen }: DropdownProps) {
   const { signOut } = useAuth();
+  const { filter } = useProduct();
   const node = useRef<HTMLDivElement>(null);
 
   const handleSignOut = () => {
@@ -33,10 +35,15 @@ export function Dropdown({ toggleDropdown, isOpen }: DropdownProps) {
     };
   }, []);
 
+  const handleFavorite = () => {
+    filter();
+    toggleDropdown();
+  };
+
   return (
     <Container ref={node} style={isOpen ? null : { display: "none" }}>
       <List>
-        <Item>
+        <Item onClick={handleFavorite}>
           <FiHeart size={20} />
           <Span>Favoritos</Span>
         </Item>

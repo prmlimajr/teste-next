@@ -48,7 +48,7 @@
       "name": "Cooktop À Gás 4 Bocas Brastemp Ative! Bdd61 Preto Vidro - Bivolt",
       "sku": "ct/bi/bdd",
       "price": 638.99,
-      "isFavorite": false,
+      "isFavorite": true,
       "created_at": "19/09/2021",
       "updated_at": "20/09/2021",
       "updated_by": "Paulo Lima"
@@ -89,8 +89,8 @@
       "id": "b08cb8ce-2876-46b8-a4e0-0b87c3fe3b37",
       "name": "Cooktop À Gás Consul 5 Bocas Cd075 Acendimento Inteligente Preto",
       "sku": "ct/g/cd0",
-      "price": 19.99,
-      "isFavorite": true,
+      "price": 199.99,
+      "isFavorite": false,
       "created_at": "19/09/2021",
       "updated_at": "20/09/2021",
       "updated_by": "Paulo Lima"
@@ -133,9 +133,9 @@
       "name": "Teste",
       "sku": "asda",
       "price": 50,
-      "isFavorite": false,
+      "isFavorite": true,
       "created_at": "2021-09-19T20:33:54.210Z",
-      "updated_at": "2021-09-19T20:33:54.210Z",
+      "updated_at": "20/09/2021",
       "updated_by": "Paulo Lima"
     },
     {
