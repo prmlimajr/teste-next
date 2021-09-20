@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { FiChevronLeft, FiEdit, FiHeart } from "react-icons/fi";
+import { FiChevronLeft, FiEdit, FiTrash2, FiHeart } from "react-icons/fi";
+import { FaHeart } from "react-icons/fa";
+import { format } from "date-fns";
 
+import { ProductModal } from "../../../components/ProductModal";
+import { DeleteModal } from "../../../components/DeleteModal";
 import { Loader } from "../../../components/Loader";
 
-import { api } from "../../../service/api";
+import { useProduct } from "../../../context/products";
+import { useAuth } from "../../../context/auth";
 
 import {
   Container,
@@ -12,6 +17,8 @@ import {
   Menu,
   GoBackArea,
   GoBack,
+  Settings,
+  Clickable,
   ProductInfo,
   Left,
   ProductName,
@@ -19,7 +26,6 @@ import {
   ProductPrice,
   Right,
   ProductMetadata,
-  Favorite,
 } from "./styles";
 
 interface Product {
@@ -27,22 +33,29 @@ interface Product {
   name: string;
   sku: string;
   price: number;
+  isFavorite: boolean;
   created_at: string;
   updated_at: string;
   updated_by: string;
 }
 
 export default function Products() {
-  const [product, setProduct] = useState<Product>({} as Product);
   const [isLoading, setIsLoading] = useState(true);
+  const [product, setProduct] = useState<Product>({} as Product);
+  const [isProductModalOpen, setIsProductModalOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+
+  const { products, findOne, list, update, destroy } = useProduct();
+  const { user } = useAuth();
 
   const router = useRouter();
   const { id } = router.query;
 
   useEffect(() => {
-    async function loadProduct() {
-      const { data } = await api.get(`/products/${id}`);
-      setProduct(data);
+    function loadProduct() {
+      const productExists = findOne(id);
+
+      setProduct(productExists);
     }
 
     try {
@@ -52,11 +65,63 @@ export default function Products() {
     } finally {
       setIsLoading(false);
     }
-  }, [id]);
+  }, [products]);
+
+  const handleLike = async () => {
+    try {
+      setIsLoading(true);
+
+      await update(id, {
+        id: product.id,
+        name: product.name,
+        sku: product.sku,
+        price: product.price,
+        isFavorite: !product.isFavorite,
+        created_at: product.created_at,
+        updated_at: format(new Date(), "dd/MM/yyyy"),
+        updated_by: user.name,
+      });
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleCloseModal = async (success: boolean) => {
+    if (success) {
+      try {
+        setIsLoading(true);
+
+        await list();
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    setIsProductModalOpen(false);
+    setIsDeleteModalOpen(false);
+  };
 
   return (
     <Container>
       {isLoading && <Loader />}
+      {isProductModalOpen && (
+        <ProductModal
+          type="EDIT"
+          onClose={(e: boolean) => handleCloseModal(e)}
+          product={product}
+        />
+      )}
+
+      {isDeleteModalOpen && (
+        <DeleteModal
+          id={product.id}
+          onClose={(e: boolean) => handleCloseModal(e)}
+        />
+      )}
 
       {product && (
         <ProductCard>
@@ -66,7 +131,21 @@ export default function Products() {
               <GoBack>Voltar</GoBack>
             </GoBackArea>
 
-            <FiEdit size={20} />
+            <Settings>
+              <Clickable onClick={() => handleLike()}>
+                {product.isFavorite ? (
+                  <FaHeart size={24} />
+                ) : (
+                  <FiHeart size={24} />
+                )}
+              </Clickable>
+              <Clickable onClick={() => setIsProductModalOpen(true)}>
+                <FiEdit size={20} />
+              </Clickable>
+              <Clickable onClick={() => setIsDeleteModalOpen(true)}>
+                <FiTrash2 size={20} />
+              </Clickable>
+            </Settings>
           </Menu>
 
           <ProductInfo>
@@ -88,10 +167,6 @@ export default function Products() {
               <ProductMetadata>
                 Atualizado por {product.updated_by}
               </ProductMetadata>
-
-              <Favorite>
-                <FiHeart size={24} />
-              </Favorite>
             </Right>
           </ProductInfo>
         </ProductCard>

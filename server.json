@@ -3,11 +3,11 @@
     {
       "id": "3b99976f-62a8-456a-aff6-1e7cd2859165",
       "name": "Geladeira Brastemp Brm44hk Frost Free Duplex 375l Com Compartimento Extrafrio Fresh Zone Inox - 110v",
-      "brand": "Brastemp",
       "sku": "gel/110/brm",
       "price": 2899.99,
+      "isFavorite": false,
       "created_at": "19/09/2021",
-      "updated_at": "19/09/2021",
+      "updated_at": "20/09/2021",
       "updated_by": "Paulo Lima"
     },
     {
@@ -16,6 +16,7 @@
       "brand": "Brastemp",
       "sku": "gel/110/bre",
       "price": 4248,
+      "isFavorite": false,
       "created_at": "19/09/2021",
       "updated_at": "19/09/2021",
       "updated_by": "Paulo Lima"
@@ -26,6 +27,7 @@
       "brand": "Brastemp",
       "sku": "gel/220/brm-b",
       "price": 2999.99,
+      "isFavorite": false,
       "created_at": "19/09/2021",
       "updated_at": "19/09/2021",
       "updated_by": "Paulo Lima"
@@ -36,6 +38,7 @@
       "brand": "Brastemp",
       "sku": "fog/bi/bfo-b",
       "price": 899.99,
+      "isFavorite": false,
       "created_at": "19/09/2021",
       "updated_at": "19/09/2021",
       "updated_by": "Paulo Lima"
@@ -43,21 +46,21 @@
     {
       "id": "0df210b5-07f4-450f-bca3-a02a1ecc26bb",
       "name": "Cooktop À Gás 4 Bocas Brastemp Ative! Bdd61 Preto Vidro - Bivolt",
-      "brand": "Brastemp",
       "sku": "ct/bi/bdd",
       "price": 638.99,
+      "isFavorite": false,
       "created_at": "19/09/2021",
-      "updated_at": "19/09/2021",
+      "updated_at": "20/09/2021",
       "updated_by": "Paulo Lima"
     },
     {
       "id": "256a30c6-3689-4e6b-b160-a0d43f70e158",
       "name": "Micro-Ondas Brastemp Espelhado Grill 32 Litros - Bmg45 110v",
-      "brand": "Brastemp",
       "sku": "mo/110/bmg",
       "price": 999.99,
+      "isFavorite": false,
       "created_at": "19/09/2021",
-      "updated_at": "19/09/2021",
+      "updated_at": "20/09/2021",
       "updated_by": "Paulo Lima"
     },
     {
@@ -66,6 +69,7 @@
       "brand": "Consul",
       "sku": "maq/110/cwb",
       "price": 1329.99,
+      "isFavorite": false,
       "created_at": "19/09/2021",
       "updated_at": "19/09/2021",
       "updated_by": "Paulo Lima"
@@ -76,6 +80,7 @@
       "brand": "Consul",
       "sku": "mo/127/cm0",
       "price": 539.99,
+      "isFavorite": false,
       "created_at": "19/09/2021",
       "updated_at": "19/09/2021",
       "updated_by": "Paulo Lima"
@@ -83,11 +88,11 @@
     {
       "id": "b08cb8ce-2876-46b8-a4e0-0b87c3fe3b37",
       "name": "Cooktop À Gás Consul 5 Bocas Cd075 Acendimento Inteligente Preto",
-      "brand": "Consul",
       "sku": "ct/g/cd0",
-      "price": 589.99,
+      "price": 19.99,
+      "isFavorite": true,
       "created_at": "19/09/2021",
-      "updated_at": "19/09/2021",
+      "updated_at": "20/09/2021",
       "updated_by": "Paulo Lima"
     },
     {
@@ -96,6 +101,7 @@
       "brand": "Consul",
       "sku": "fog/bi/cfo",
       "price": 1438,
+      "isFavorite": false,
       "created_at": "19/09/2021",
       "updated_at": "19/09/2021",
       "updated_by": "Paulo Lima"
@@ -106,6 +112,7 @@
       "brand": "Consul",
       "sku": "frz/220/cvu",
       "price": 1588.99,
+      "isFavorite": false,
       "created_at": "19/09/2021",
       "updated_at": "19/09/2021",
       "updated_by": "Paulo Lima"
@@ -116,6 +123,7 @@
       "brand": "Consul",
       "sku": "frz/220/cvu",
       "price": 1588.99,
+      "isFavorite": false,
       "created_at": "19/09/2021",
       "updated_at": "19/09/2021",
       "updated_by": "Paulo Lima"
@@ -125,6 +133,7 @@
       "name": "Teste",
       "sku": "asda",
       "price": 50,
+      "isFavorite": false,
       "created_at": "2021-09-19T20:33:54.210Z",
       "updated_at": "2021-09-19T20:33:54.210Z",
       "updated_by": "Paulo Lima"
@@ -134,6 +143,7 @@
       "name": "Teste2",
       "sku": "asdad",
       "price": 31231,
+      "isFavorite": false,
       "created_at": "2021-09-19T20:37:31.678Z",
       "updated_at": "2021-09-19T20:37:31.678Z",
       "updated_by": "Paulo Lima"
@@ -143,8 +153,29 @@
       "name": "teste123",
       "sku": "asdate",
       "price": 1000.99,
+      "isFavorite": false,
       "created_at": "19/09/2021",
-      "updated_at": "19/09/2021",
+      "updated_at": "20/09/2021",
+      "updated_by": "Paulo Lima"
+    },
+    {
+      "id": "4b83d79f-9acf-4dce-bff5-bb62751250f5",
+      "name": "testando",
+      "sku": "teste12312",
+      "price": 1111,
+      "isFavorite": false,
+      "created_at": "20/09/2021",
+      "updated_at": "20/09/2021",
+      "updated_by": "Paulo Lima"
+    },
+    {
+      "id": "c5e4f77b-0815-48b3-a53a-7ee0a9a1a3ec",
+      "name": "teste 4",
+      "sku": "tesra",
+      "price": 231,
+      "isFavorite": false,
+      "created_at": "20/09/2021",
+      "updated_at": "20/09/2021",
       "updated_by": "Paulo Lima"
     }
   ]

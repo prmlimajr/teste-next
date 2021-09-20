@@ -6,8 +6,11 @@ import { ErrorMessage, Form, Field, Formik } from "formik";
 import { IoMdClose } from "react-icons/io";
 
 import { Input } from "../Input";
+import { Button } from "../Button";
+import { Loader } from "../Loader";
 
-import { api } from "../../service/api";
+import { useAuth } from "../../context/auth";
+import { useProduct } from "../../context/products";
 
 import {
   Wrapper,
@@ -15,10 +18,8 @@ import {
   CloseArea,
   Title,
   ValidationError,
+  Clickable,
 } from "./styles";
-import { Button } from "../Button";
-import { useAuth } from "../../context/auth";
-import { Loader } from "../Loader";
 
 const schema = Yup.object().shape({
   name: Yup.string()
@@ -43,6 +44,7 @@ interface Product {
   name: string;
   sku: string;
   price: number;
+  isFavorite: boolean;
   created_at: string;
   updated_at: string;
   updated_by: string;
@@ -53,6 +55,7 @@ export function ProductModal({ onClose, type, product }: ProductModalProps) {
   const node = useRef<HTMLDivElement>(null);
 
   const { user } = useAuth();
+  const { register, update } = useProduct();
 
   useEffect(() => {
     const close = (e) => {
@@ -111,33 +114,27 @@ export function ProductModal({ onClose, type, product }: ProductModalProps) {
       };
 
       if (type === "CREATE") {
-        await api.post(
-          "/products",
-          {
-            id: uuidv4(),
-            name,
-            sku,
-            price,
-            created_at: format(new Date(), "dd/MM/yyyy"),
-            updated_at: format(new Date(), "dd/MM/yyyy"),
-            updated_by: user.name,
-          },
-          config
-        );
+        await register({
+          id: uuidv4(),
+          name,
+          sku,
+          price,
+          isFavorite: false,
+          created_at: format(new Date(), "dd/MM/yyyy"),
+          updated_at: format(new Date(), "dd/MM/yyyy"),
+          updated_by: user.name,
+        });
       } else {
-        await api.put(
-          `/products/${product.id}`,
-          {
-            id: product.id,
-            name,
-            sku,
-            price,
-            created_at: product.created_at,
-            updated_at: format(new Date(), "dd/MM/yyyy"),
-            updated_by: user.name,
-          },
-          config
-        );
+        await update(product.id, {
+          id: product.id,
+          name,
+          sku,
+          price,
+          isFavorite: product.isFavorite,
+          created_at: product.created_at,
+          updated_at: format(new Date(), "dd/MM/yyyy"),
+          updated_by: user.name,
+        });
       }
     } catch (error) {
       console.log(error);
@@ -153,7 +150,9 @@ export function ProductModal({ onClose, type, product }: ProductModalProps) {
 
       <Container ref={node}>
         <CloseArea>
-          <IoMdClose size={24} onClick={() => onClose(false)} />
+          <Clickable onClick={() => onClose(false)}>
+            <IoMdClose size={24} />
+          </Clickable>
         </CloseArea>
         <Formik
           initialValues={initialValues()}

@@ -15,7 +15,6 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   width: 500px;
-  /* min-height: 500px; */
   background-color: var(--color-card);
   border-radius: 10px;
   display: flex;
@@ -26,23 +25,21 @@ export const Container = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
 
-export const CloseArea = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-`;
-
 export const Title = styled.h1`
   font-size: 2rem;
   font-weight: 900;
   margin-bottom: 20px;
 `;
 
-export const ValidationError = styled.span`
-  font-weight: 700;
-  color: var(--alert);
-  font-size: 0.9rem;
+export const Description = styled.p`
+  font-size: 1.2rem;
+`;
+
+export const CloseArea = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
 `;
 
 export const Clickable = styled.div`

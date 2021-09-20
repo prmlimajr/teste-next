@@ -20,6 +20,7 @@ import {
   Option,
   ProductsArea,
 } from "./styles";
+import { useProduct } from "../context/products";
 
 interface Product {
   id: string;
@@ -28,20 +29,22 @@ interface Product {
   image?: string;
   sku: string;
   isFavorite: boolean;
+  created_at: string;
+  updated_at: string;
+  updated_by: string;
 }
 
 export default function Home() {
-  const [products, setProducts] = useState<Product[]>([]);
   const [term, setTerm] = useState("");
   const [isProductModalOpen, setIsProductModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  const { products, list, search, filter, order } = useProduct();
+
   useEffect(() => {
     async function loadProducts() {
       try {
-        const { data } = await api.get("/products?_sort=name");
-
-        setProducts(data);
+        await list();
       } catch (error) {
         console.error(error);
       } finally {
@@ -56,8 +59,7 @@ export default function Home() {
     try {
       setIsLoading(true);
 
-      const { data } = await api.get(`/products?name_like=${term}`);
-      setProducts(data);
+      await search(term);
     } catch (error) {
       console.error(error);
     } finally {
@@ -65,12 +67,11 @@ export default function Home() {
     }
   };
 
-  const handleFilter = async (filter: string) => {
+  const handleFilter = async () => {
     try {
       setIsLoading(true);
 
-      const { data } = await api.get(`/products?favorite=true`);
-      setProducts(data);
+      await filter();
     } catch (error) {
       console.error(error);
     } finally {
@@ -82,8 +83,7 @@ export default function Home() {
     try {
       setIsLoading(true);
 
-      const { data } = await api.get(`/products?_sort=${sort}`);
-      setProducts(data);
+      await order(sort);
     } catch (error) {
       console.error(error);
     } finally {
@@ -95,8 +95,7 @@ export default function Home() {
     try {
       setIsLoading(true);
 
-      const { data } = await api.get("/products");
-      setProducts(data);
+      await list();
     } catch (error) {
       console.error(error);
     } finally {
@@ -109,8 +108,7 @@ export default function Home() {
       try {
         setIsLoading(true);
 
-        const { data } = await api.get("/products");
-        setProducts(data);
+        await list();
       } catch (error) {
         console.error(error);
       } finally {
@@ -129,6 +127,7 @@ export default function Home() {
 
       <Container>
         {isLoading && <Loader />}
+
         {isProductModalOpen && (
           <ProductModal
             type="CREATE"
@@ -160,9 +159,7 @@ export default function Home() {
 
             <FilterHeader>Filtros:</FilterHeader>
             <Options>
-              <Option onClick={() => handleFilter("isFavorite")}>
-                Favoritos
-              </Option>
+              <Option onClick={() => handleFilter()}>Favoritos</Option>
             </Options>
 
             <Button onClick={() => handleClearFilter()}>Limpar filtros</Button>
@@ -179,7 +176,10 @@ export default function Home() {
                 name={product.name}
                 price={product.price}
                 sku={product.sku}
-                favorite={product.isFavorite}
+                isFavorite={product.isFavorite}
+                created_at={product.created_at}
+                updated_at={product.updated_at}
+                updated_by={product.updated_by}
               />
             );
           })}
