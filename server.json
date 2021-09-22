@@ -35,12 +35,11 @@
     {
       "id": "9ff63e91-fd99-4425-85a4-57036054f0e4",
       "name": "Fogão De Piso Brastemp 4 Bocas Bfo4n Branco - Bivolt",
-      "brand": "Brastemp",
       "sku": "fog/bi/bfo-b",
       "price": 899.99,
-      "isFavorite": false,
+      "isFavorite": true,
       "created_at": "19/09/2021",
-      "updated_at": "19/09/2021",
+      "updated_at": "21/09/2021",
       "updated_by": "Paulo Lima"
     },
     {
@@ -50,7 +49,7 @@
       "price": 638.99,
       "isFavorite": true,
       "created_at": "19/09/2021",
-      "updated_at": "20/09/2021",
+      "updated_at": "21/09/2021",
       "updated_by": "Paulo Lima"
     },
     {
@@ -90,7 +89,7 @@
       "name": "Cooktop À Gás Consul 5 Bocas Cd075 Acendimento Inteligente Preto",
       "sku": "ct/g/cd0",
       "price": 199.99,
-      "isFavorite": false,
+      "isFavorite": true,
       "created_at": "19/09/2021",
       "updated_at": "20/09/2021",
       "updated_by": "Paulo Lima"
@@ -124,6 +123,16 @@
       "price": 1558.99,
       "isFavorite": true,
       "created_at": "19/09/2021",
+      "updated_at": "20/09/2021",
+      "updated_by": "Paulo Lima"
+    },
+    {
+      "id": "6aca2aa2-c8fd-423b-a22e-af70067db43d",
+      "name": "Teste",
+      "sku": "asda",
+      "price": 23,
+      "isFavorite": true,
+      "created_at": "20/09/2021",
       "updated_at": "20/09/2021",
       "updated_by": "Paulo Lima"
     }

@@ -19,6 +19,7 @@ export const Container = styled.main`
     justify-content: center;
     align-items: center;
     padding: 0;
+    margin-top: 120px;
   }
 `;
 

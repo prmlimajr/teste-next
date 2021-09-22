@@ -7,6 +7,16 @@ export const Container = styled.main`
   justify-content: center;
   background: var(--background);
   margin-bottom: 150px;
+
+  @media (max-width: 1080px) {
+  }
+
+  @media (max-width: 720px) {
+    width: 320px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const ProductCard = styled.div`

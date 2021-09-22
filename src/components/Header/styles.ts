@@ -16,6 +16,12 @@ export const Container = styled.nav`
   @media (max-width: 720px) {
     padding: 20px 20px;
     max-width: 370px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: var(--background);
+    width: 100%;
   }
 `;
 
