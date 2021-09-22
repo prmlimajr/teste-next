@@ -37,7 +37,7 @@ Esta aplicação foi desenvolvida como parte do teste técnico solicitado pela H
   Com estas ferramentas instaladas você deve, no terminal, acessar a pasta de destino escolhida para este projeto e clonar este repositório para a sua máquina usando o comando abaixo:
   
   ```bash
-    git clone https://github.com/prmlimajr/hvar-whirlpool-tech-challenge-next.git
+    git clone https://github.com/prmlimajr/teste-next.git
   ```
   
   <p>Após terminar o processo de download do projeto, você deve acessar a pasta com o conteúdo baixado e executar o comando abaixo para instalar as dependências:</p>
